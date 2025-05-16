@@ -337,6 +337,7 @@ $controlsArrowAngleActive: 36deg;
 		position: relative;
 		width: $controlArrowSize;
 		height: $controlArrowSize;
+		visibility: hidden;
 
 		@include controlsArrowTransform( $controlsArrowAngle );
 
@@ -613,7 +614,7 @@ $controlsArrowAngleActive: 36deg;
 	bottom: 8px;
 	z-index: 31;
 	font-family: Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 22px;
 	line-height: 1;
 	color: #fff;
 	background-color: rgba( 0, 0, 0, 0.4 );
@@ -2199,12 +2200,15 @@ $notesWidthPercent: 25%;
 */
 
 .formation-content {
-	background-color: #7854ab;
-	padding: 0.3em;
+	background-image: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(171, 84, 84, 1) 0%, rgba(120, 84, 171, 1) 100%);
+	padding: 0.1em;
+	border-radius: 15px;
+	color: white;
 }
 
 .formation-opening {
 	font-size: 2em;
+	color: white;
 }
 
 .formation-footer{
@@ -2234,4 +2238,52 @@ $notesWidthPercent: 25%;
 .formation-main {
 	display: flex;
 	font-size: 0.5em;
+	width: 100%;
+	margin-top: 11%;
+	color: white;
+}
+
+.slide5 {
+	display: flex;
+	flex-direction: column;
+}
+
+.slide6 {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.ipv6 {
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5em;
+	font-size: 1.3em;
+	border-radius: 25px;
+	background-image: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(107, 47, 150, 1) 0%, rgba(237, 83, 193, 1) 100%);
+}
+
+.ipv6_bin {
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5em;
+	font-size: 1.3em;
+	border-radius: 25px;
+	background-image: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(47, 73, 150, 1) 0%, rgba(83, 157, 237, 1) 100%);
+}
+
+.ip-container {
+	display: flex;
+	flex-direction: row;
+	gap: 0.3em;
+	font-size: 0.9em;
+	justify-content: space-evenly;
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+	background-color: #7854ab;
+	border-radius: 20px;
 }

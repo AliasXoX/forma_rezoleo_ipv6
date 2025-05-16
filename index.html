@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Forma IPv6</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -19,7 +19,7 @@
 				<!-- Slide 1 -->
 				<section data-background-image="img/intro.svg" style="width: 100%;height:100%">
 					<div class="formation-content">
-					<p class="formation-opening">Formation IPv6</p>
+					<p class="formation-opening">IPv6 : Ceci n'est pas une forma réseau</p>
 					</div>
 					<footer class="formation-footer">
 						<span>Laurent "Alias" Peretti</span>
@@ -31,7 +31,7 @@
 					<header class="formation-header">
 						<p class="formation-header-title">Révisions IPv4</p>
 					</header>
-					<img src="img/modele_OSI.png" style="width: 90%;">
+					<img class="fragment" src="img/modele_OSI.png" style="width: 90%;">
 				</section>
 
 				<!-- Slide 3 -->
@@ -39,7 +39,7 @@
 					<header class="formation-header">
 						<p class="formation-header-title">Révisions IPv4</p>
 					</header>
-					<img src="img/ipv4.png">
+					<img class="fragment" src="img/ipv4.png">
 					<main class="formation-main">
 						<div class="fragment formation-content">
 							<ul>
@@ -68,33 +68,293 @@
 					<header class="formation-header">
 						<p class="formation-header-title">NAT (Network Address Translation)</p>
 					</header>
-					<main class="formation-main">
+					<main class="formation-main slide5">
 						<div class="formation-content">
 							<ul>
-								<li> Technique qui consiste à faire correspondre des adresses IP à d'autres adresses IP (en général traduire des adresses privées en adresse public) </li>
+								<li>Technique permettant de traduire des adresses IP en d'autres adresses IP (en général des adresses privées en une adresse publique)</li>
 							</ul>
 						</div>
-						
+						<img src="img/NAT.png" style="width: 50%;">
 					</main>
-					<p>*Expliquer en montrant l'exemple du Rézoleo*</p>
 				</section>
+
+				<!-- Slide 6 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
-						<p class="formation-header-title">Révisions IPv4</p>
+						<p class="formation-header-title">NAT (Network Address Translation)</p>
 					</header>
-					<main class="formation-main">
+					<main class="formation-main slide6">
+						<img src="img/NAT_example.svg" style="width: 100%;">
+					</main>
+				</section>
+
+				<!-- Slide 7 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">IPv6 kaissecé</p>
+					</header>
+					<main class="fragment formation-main" style="flex-direction: column;">
 						<div class="formation-content">
-							
+							<ul>
+								<li class="fragment">Une nouvelle version du protocole IP achevée dans les années 2000</li>
+								<li class="fragment">Une adresse plus longue avec 128 bits plutôt que 32 bits</li>
+								<li class="fragment">Un protocole moderne qui prends en compte des besoins que les concepteurs d'IPv4 n'avaient pas envisagés</li>
+							</ul>
+						</div>
+						<div class="fragment formation-content" style="margin-top: 3%;">
+							<p class="fragment">Question : Si toutes les secondes, un nombre d'ipv6 égal au nombre total d'ipv4 était attribuée, combien d'année cela prendrait-il pour épuiser toutes les ipv6 ?</p>
+							<p class="fragment">À vos calculatrices !</p>
+						</div>
+						<div class="fragment formation-content" style="margin-top: 3%;">
+							<p class="fragment">Réponse : Beaucoup</p><p class="fragment">2,51230855258321719918645200202942668696093353627600202942668696093353627600202942668696093353627600202942668696093353627600202 × <math><msup><mi>10</mi><mn>21</mn></msup></math></p>
 						</div>
 					</main>
 				</section>
+
+				<!-- Slide 8 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Notation des adresses IPv6 (<a href="https://datatracker.ietf.org/doc/html/rfc5952">RFC 5952</a>)</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction: column;">
+						<div class="fragment" style="display: flex;justify-content: center;">
+							<div class="ipv6">
+								<span>fe80:00d4:0000:0000:0005:7566</span>
+							</div>
+							<div class="ipv6" style="margin-left: 1em;">
+								<span>/64</span>
+							</div>
+						</div>
+						<div class="fragment" style="display: flex;justify-content: center;margin-top: 1em;">
+							<div class="ipv6">
+								<span style="padding: 0 2.7em;">fe80:d4:0:0:5:7566</span>
+							</div>
+							<div class="ipv6" style="margin-left: 1em;">
+								<span>/64</span>
+							</div>
+						</div>
+						<div class="fragment" style="display: flex;justify-content: center;margin-top: 1em;">
+							<div class="ipv6">
+								<span style="padding: 0 3.35em;">fe80:d4::5:7566</span>
+							</div>
+							<div class="ipv6" style="margin-left: 1em;">
+								<span>/64</span>
+							</div>
+						</div>
+						<div class=" fragment formation-content" style="margin-top: 1em;">
+							<ul>
+								<li>Attention !: S'il y a plusieurs suites de champs nuls on ne peut appliquer de réduction que sur une seule</li>
+								<li>Par convention on applique la réduction sur la suite la plus longue</li>
+							</ul>
+						</div>
+						<div style="display: flex;justify-content: center;margin-top: 1em;">
+							<div class="fragment ipv6">
+								<span style="padding: 0 3.35em;">fe80:0000:0004:0000:0000:7566</span>
+							</div>
+							<div class="fragment ipv6" style="margin-left: 1em;">
+								<span>fe80:0000:0004::7566</span>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 9 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Notation des URL(<a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>)</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;">
+						<div style="display: flex;justify-content: center;margin-top: 1em;">
+							<div class="fragment ipv6">
+								<span style="padding: 0em;">fe80:0000:0004::7566</span>
+							</div>
+							<div class="fragment ipv6" style="margin-left: 1em;">
+								<span>https://[fe80:0000:0004::7566]:3000</span>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 10 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Exercice !</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction: column;">
+						<div style="display: flex;justify-content: center;margin-top: 1em;">
+							<div class="fragment ipv6_bin">
+								<span style="padding: 0 3.35em;">00100000 00000001 00001101 10111000 00000000 00000000 00000000 00000000 00000000
+									00001000 00001000 00000000 00100000 00001100 01000001 01111010 </span>
+							</div>
+						</div>
+						<div class="fragment formation-content" style="margin-top: 1em;">
+							<p style="font-size: 1.5em;">Donner la notation conventionnelle de cette adresse IPv6</p>
+						</div>
+						<div style="display: flex;justify-content: center;margin-top: 1em;">
+							<div class="fragment ipv6">
+								<span style="padding: 0 3.35em;">2001:db8::8:800:200C:417A</span>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 11 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Adresses Unicast</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction: column;">
+						<img class="fragment" src="img/Unicast.svg">
+					</main>
+				</section>
+
+				<!-- Slide 12 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Adresses Unicast Globales (GUA)</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div class="ip-container">
+							<div class="fragment">
+								<p>Préfixe global de routage (48 bits)</p>
+								<div class="ipv6">
+									<span>2001:db8:c0ca:</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Préfixe sous-réseau (SID) (16 bits)</p>
+								<div class="ipv6">
+									<span>c01a:</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Identifiant de l'interface (IID) (64 bits)</p>
+								<div class="ipv6">
+									<span>8:800:200C:417A</span>
+								</div>
+							</div>
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 3em;">
+								<p style="width: 30%;"> À retenir :</p>
+								<ul>
+									<li>
+										Équivalent des IPv4 publiques
+									</li>
+									<li>
+										Débute par 2 ou 3 (préfixe 2000::/3)
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 13 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Adresses Unicast Locales Uniques (ULA)</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div class="ip-container">
+							<div class="fragment">
+								<p>Préfixe ULA(8 bits)</p>
+								<div class="ipv6">
+									<span>fd</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Global ID (40 bits)</p>
+								<div class="ipv6">
+									<span>42:b26d:e833:</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Sous réseau (SID) (16 bits)</p>
+								<div class="ipv6">
+									<span>a1e2:</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Identifiant de l'interface (IID) (64 bits)</p>
+								<div class="ipv6">
+									<span>42:b26d:e833</span>
+								</div>
+							</div>
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 3em;">
+								<p style="width: 15%;"> À retenir:</p>
+								<ul>
+									<li>
+										Équivalent des IPv4 privées
+									</li>
+									<li>
+										Préfixe : fd00::/8
+									</li>
+									<li>
+										Global ID généré aléatoirement selon les normes en vigueur (<a href="https://datatracker.ietf.org/doc/html/rfc4193">RFC4193</a>)
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 14 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Adresses Unicast Locales de Lien (LLA)</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div class="ip-container">
+							<div class="fragment">
+								<p>Préfixe LLA(64 bits)</p>
+								<div class="ipv6">
+									<span>fe80:0000:0000:0000:</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Identifiant de l'interface (IID) (64 bits)</p>
+								<div class="ipv6">
+									<span>2419:3bff:fe11:3ce8</span>
+								</div>
+							</div>
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 3em;">
+								<p style="width: 50%;"> À retenir:</p>
+								<ul>
+									<li>
+										Valide niveau L2
+									</li>
+									<li>
+										Préfixe : fe800::/64
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 15 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Adresses Multicast</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction: row;width: 100%;">
+						<img class="fragment" src="img/Multicast.svg" style="width:50%">
+					</main>
+				</section>
+
+				<!-- Template -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Titre</p>
 					</header>
 					<main class="formation-main">
 						<div class="formation-content">
-							<p>Paraphraphe</p>
+							<p>Paragraphe</p>
 						</div>
 					</main>
 				</section>
@@ -111,6 +371,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
