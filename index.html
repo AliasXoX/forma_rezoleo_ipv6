@@ -81,7 +81,7 @@
 				<!-- Slide 6 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
-						<p class="formation-header-title">NAT (Network Address Translation)</p>
+						<p class="formation-header-title">NAT (Network Address Translation) Vite fait</p>
 					</header>
 					<main class="formation-main slide6">
 						<img src="img/NAT_example.svg" style="width: 100%;">
@@ -347,7 +347,407 @@
 					</main>
 				</section>
 
-				<!-- Template -->
+				<!-- Slide 16 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Structure des adresses multicast</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div class="ip-container">
+							<div class="fragment">
+								<p>Préfixe multicast (8 bits)</p>
+								<div class="ipv6">
+									<span>ff</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>0RPT(4 bits)</p>
+								<div class="ipv6">
+									<span>x</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Scope(4 bits)</p>
+								<div class="ipv6">
+									<span>x:</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>Identifiant de groupe</p>
+								<div class="ipv6">
+									<span>cec0:c018:6df8:c053:482d:35a0:1c68</span>
+								</div>
+							</div>
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 3em;">
+								<ul>
+									<li>Pas de Broadcast en ipv6 !</li>
+									<li>
+										Préfixe multicast : ff00::/8
+									</li>
+									<li>
+										0RPT : 4 bits qui donnent plusieurs informations sur l'IP
+									</li>
+									<li>
+										Scope : Portée de diffusion de l'adresse
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 17 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Table des scopes</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div>
+							<table class="ipv6_table">
+								<thead>
+									<tr>
+										<th> Value </th>
+										<th> Scope </th>
+									</tr>
+								</thead>
+								<tr>
+									<th>0</th>
+									<th>Reserved</th>
+								</tr>
+								<tr>
+									<th>1</th>
+									<th>Local node</th>
+								</tr>
+								<tr>
+									<th>2</th>
+									<th>Link local</th>
+								</tr>
+								<tr>
+									<th>3</th>
+									<th>Realm local</th>
+								</tr>
+								<tr>
+									<th>4</th>
+									<th>Admin local</th>
+								</tr>
+								<tr>
+									<th>5</th>
+									<th>Site local</th>
+								</tr>
+								<tr>
+									<th>8</th>
+									<th>Organization local</th>
+								</tr>
+								<tr>
+									<th>E</th>
+									<th>Global</th>
+								</tr>
+								<tr>
+									<th>F</th>
+									<th>Reserved</th>
+								</tr>
+							</table>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 18 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Adresses multicast sollicitées</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div class="ip-container">
+							<div class="fragment">
+								<p>Préfixe multicast sollicité (104 bits)</p>
+								<div class="ipv6">
+									<span>ff02:0000:0000:0000:0000:0001:ff</span>
+								</div>
+							</div>
+							<div class="fragment">
+								<p>derniers bits de l'adresse unicast (24 bits)</p>
+								<div class="ipv6">
+									<span>6d:e833</span>
+								</div>
+							</div>
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 3em;">
+								<ul>
+									<li>
+										Préfixe : ff02::1:ff00:0/104
+									</li>
+									<li>
+										Permet de faire la recherche de voisin sur un nombre limité de machines
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 19 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Fonctionnement du multicast</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img class="fragment" src="img/multicast_example_modified.png" style="width:80%">
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								Protocole de découverte des voisins (NDP) :
+								<ul>
+									<li>
+										Fait correspondre une adresse IP à une adresse MAC
+									</li>
+									<li>
+										Permet d'éviter la duplication d'IP
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 20 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">En pratique comment faire de l'ipv6 ?</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li class="fragment">
+										DHCPv6 ? :
+										<ul class="fragment">
+											<li class="fragment">
+												Oui, DHCPv6 (comme ipv4)
+											</li>
+											<li class="fragment">
+												Mais pas forcément, autoconfiguration possible (SLAAC : StateLess Address AutoConfiguration) grâce à la détection de duplications
+											</li>
+										</ul>
+									</li>
+									<li class="fragment">
+										NATv6 ? :
+										<ul class="fragment">
+											<li class="fragment">On donne des ip publiques à tout le monde donc osef</li>
+											<li class="fragment">Ou bien on met un NAT66 (change un préfixe ipv6 en un autre)</li>
+										</ul>
+									</li>
+									<li class="fragment">
+										DNSv6 ?	
+									</li>
+									<li class="fragment">
+										Mikrotikv6 ?
+									</li>
+									<li class="fragment">
+										Rezoleov6 ?
+									</li>
+									<li class="fragment">
+										Centralev6 ?
+									</li>
+									<li class="fragment">
+										leav6 ?
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 21 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Quid des ipv4 ?</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li class="fragment">
+										Proportion d'utilisateurs se connectant à Google avec une ipv6 en Mai 2025: ~43%
+									</li>
+									<li class="fragment">
+										Problème : Il ne peut y avoir interaction entre ipv4 et ipv6 de par leurs natures	
+									</li>
+									<li class="fragment">
+										Solutions :
+											<ul>
+												<li class="fragment">
+													Double pile
+												</li>
+												<li class="fragment">
+													Tunnel 6in4
+												</li>
+												<li class="fragment">
+													NAT64
+												</li>
+												<li class="fragment">
+													La dictature
+												</li>
+											</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 22 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Double pile</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img class="fragment" src="img/double_pile.png" style="width:80%">
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 1em 0.5em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li>
+										Système "bilingue" qui comprend ipv6 et ipv4
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 23 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Tunnel 6in4</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img class="fragment" src="img/Tunnel_6in4.png" style="width:80%">
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 1em 0.5em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li>
+										Paquets ipv6 encapsulés dans des paquets ipv4
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 24 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">NAT64</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img class="fragment" src="img/NAT64.png" style="width:80%">
+						</div>
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 1em 0.5em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li class="fragment">
+										NAT avec une interface reliée à un réseau ipv4 et une autre à un réseau ipv6
+									</li>
+									<li class="fragment">
+										Traduit les paquets ipv6 en ipv4 et vice versa
+									</li>
+									<li class="fragment">
+										Nécéssité d'un DNS64
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 25 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">La dictature</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img class="fragment" src="img/dicature.jpg" style="width:80%">
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 26 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Références</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div style="display: flex;justify-content: start;">
+							<div class=" formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li>
+										MOOC IPV6 : <a href="https://lms.fun-mooc.fr/courses/course-v1:MinesTelecom+04012+session10">https://lms.fun-mooc.fr/courses/course-v1:MinesTelecom+04012+session10</a>
+									</li>
+									<li>
+										<a href="https://labs.ripe.net/author/wilhelm/ipv6-10-years-out-an-analysis-in-users-tables-and-traffic/">IPv6 10 Years Out: An Analysis in Users, Tables, and Traffic</a>
+									</li>
+									<li>
+										<a href="https://spathis.medium.com/how-multicast-helped-ipv6-kill-broadcast-6b4ab8a106c0">How IPv6 Got Rid of Broadcast</a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/watch?v=EhCzKyojkNs&t=43s">IPv4 to IPv6 transition - Translation with NAT64</a>
+									</li>
+									<li>
+										<a href="http://g6.asso.fr/">Association G6</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 27 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Annexe 1 : En-tête ipv6</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img src="img/ipv6_head.png" style="width:80%">
+						</div>
+					</main>
+				</section>
+
+				<!-- Slide 28 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Annexe 2 : Paquet ipv6</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img src="img/ipv6_paquet.jpg" style="width:80%">
+						</div>
+					</main>
+				</section>
+				
+				<!-- Slide 29 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Annexe 3 : Message ICMPv6</p>
+					</header>
+					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
+						<div class="img-container" style="background-color: white;">
+							<img src="img/icmpv6.png" style="width:80%">
+						</div>
+					</main>
+				</section>
+
+
+				<!-- Template
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Titre</p>
@@ -357,7 +757,7 @@
 							<p>Paragraphe</p>
 						</div>
 					</main>
-				</section>
+				</section> -->
 			</div>
 		</div>
 

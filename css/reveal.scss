@@ -2287,3 +2287,35 @@ $notesWidthPercent: 25%;
 	background-color: #7854ab;
 	border-radius: 20px;
 }
+
+.img-container {
+	display: flex;
+	flex-direction: row;
+	gap: 0.3em;
+	font-size: 0.9em;
+	justify-content: space-evenly;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.ipv6_table {
+	background-color: #7854ab;
+	color: white;
+	border-radius: 10px;
+	font-size: 1.5em;
+	border: 2px solid;
+
+	thead {
+		tr {
+			th  {
+				border: 3px solid white;
+			}
+		}
+	}
+
+	tr {
+		th  {
+			border: 3px solid white;
+		}
+	}
+}
