@@ -119,7 +119,7 @@
 					<main class="formation-main" style="justify-content: center;flex-direction: column;">
 						<div class="fragment" style="display: flex;justify-content: center;">
 							<div class="ipv6">
-								<span>fe80:00d4:0000:0000:0005:7566</span>
+								<span>fe80:00d4:0000:0000:0005:2352:4535:7566</span>
 							</div>
 							<div class="ipv6" style="margin-left: 1em;">
 								<span>/64</span>
@@ -127,7 +127,7 @@
 						</div>
 						<div class="fragment" style="display: flex;justify-content: center;margin-top: 1em;">
 							<div class="ipv6">
-								<span style="padding: 0 2.7em;">fe80:d4:0:0:5:7566</span>
+								<span style="padding: 0 2.7em;">fe80:d4:0:0:5:2352:4535:7566</span>
 							</div>
 							<div class="ipv6" style="margin-left: 1em;">
 								<span>/64</span>
@@ -135,7 +135,7 @@
 						</div>
 						<div class="fragment" style="display: flex;justify-content: center;margin-top: 1em;">
 							<div class="ipv6">
-								<span style="padding: 0 3.35em;">fe80:d4::5:7566</span>
+								<span style="padding: 0 3.35em;">fe80:d4::5:2352:4535:7566</span>
 							</div>
 							<div class="ipv6" style="margin-left: 1em;">
 								<span>/64</span>
@@ -149,10 +149,10 @@
 						</div>
 						<div style="display: flex;justify-content: center;margin-top: 1em;">
 							<div class="fragment ipv6">
-								<span style="padding: 0 3.35em;">fe80:0000:0004:0000:0000:7566</span>
+								<span style="padding: 0 3.35em;">fe80:0000:0004:0000:0000:2352:4535:7566</span>
 							</div>
 							<div class="fragment ipv6" style="margin-left: 1em;">
-								<span>fe80:0000:0004::7566</span>
+								<span>fe80:0:4::2352:4535:7566</span>
 							</div>
 						</div>
 					</main>
@@ -166,10 +166,10 @@
 					<main class="formation-main" style="justify-content: center;">
 						<div style="display: flex;justify-content: center;margin-top: 1em;">
 							<div class="fragment ipv6">
-								<span style="padding: 0em;">fe80:0000:0004::7566</span>
+								<span style="padding: 0em;">fe80:0:04::7566</span>
 							</div>
 							<div class="fragment ipv6" style="margin-left: 1em;">
-								<span>https://[fe80:0000:0004::7566]:3000</span>
+								<span>https://[fe80:0:4::7566]:3000</span>
 							</div>
 						</div>
 					</main>
@@ -329,7 +329,7 @@
 										Valide niveau L2
 									</li>
 									<li>
-										Préfixe : fe800::/64
+										Préfixe : fe80::/64
 									</li>
 								</ul>
 							</div>
@@ -488,32 +488,73 @@
 					</main>
 				</section>
 
-				<!-- Slide 19 -->
+								<!-- Slide 19 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
-						<p class="formation-header-title">Fonctionnement du multicast</p>
+						<p class="formation-header-title">Neighbour Discovery Protocol (NDP)</p>
 					</header>
-					<main class="formation-main" style="justify-content: center;flex-direction:column;width: 100%;">
-						<div class="img-container" style="background-color: white;">
-							<img class="fragment" src="img/multicast_example_modified.png" style="width:80%">
-						</div>
-						<div style="display: flex;justify-content: start;">
-							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
-								Protocole de découverte des voisins (NDP) :
-								<ul>
-									<li>
-										Fait correspondre une adresse IP à une adresse MAC
-									</li>
-									<li>
-										Permet d'éviter la duplication d'IP
-									</li>
-								</ul>
+					<main class="formation-main" style="flex-direction: row;">
+						<div style="display: flex;justify-content: start;width: 50%; padding: 0em 1em;">
+							<div class=" fragment formation-content" style="width:100%;padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;height: fit-content;">
+								<p class="fragment" style="margin: 0.5em">Le NDP est un protocole de découverte de voisinage pour IPv6. Il remplace ARP pour IPv4. <br>
+								<br>
+								<span style="font-weight: bold;">Il y a 4 types de messages ICMPv6 utilisés par le NDP :</span>
+								</p>
 							</div>
 						</div>
+						<div style="display: flex;flex-direction: column; width: 50%;">
+							<div style="display: flex;justify-content: start;">
+								<div class=" fragment formation-content" style="width:100%;padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+									<p class="fragment" style="margin: 0; font-weight: bold;">Router Solicitation</p>
+									<p class="fragment" style="margin: 0.5em">Envoyé par un hôte pour découvrir les routeurs sur le lien</p>
+								</div>
+							</div>
+							<div style="display: flex;justify-content: start;">
+								<div class=" fragment formation-content" style="width:100%;padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+									<p class="fragment" style="margin: 0; font-weight: bold;">Router Advertisement</p>
+									<p class="fragment" style="margin: 0.5em">Envoyé par un routeur pour informer les hôtes du réseau local (informations d'autoconfiguration, dns, etc) </p>
+								</div>
+							</div>
+							<div style="display: flex;justify-content: start;">
+								<div class=" fragment formation-content" style="width:100%;padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+									<p class="fragment" style="margin: 0; font-weight: bold;">Neighbour Solicitation</p>
+									<p class="fragment" style="margin: 0.5em">Envoyé par un hôte pour découvrir l'adresse MAC d'un voisin</p>
+								</div>
+							</div>
+							<div style="display: flex;justify-content: start;">
+								<div class=" fragment formation-content" style="width:100%;padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+									<p class="fragment" style="margin: 0; font-weight: bold;">Neighbour Advertisement</p>
+									<p class="fragment" style="margin: 0.5em">Envoyé par un hôte pour répondre à une requête de voisinage</p>
+								</div>
+							</div>						
+						</div>
+
 					</main>
 				</section>
 
 				<!-- Slide 20 -->
+				<section data-background-image="img/intro.svg">
+					<header class="formation-header">
+						<p class="formation-header-title">Stateless Address Autoconfiguration (SLAAC)</p>
+					</header>
+					<main class="formation-main" style="flex-direction: column;">
+						<div style="display: flex;justify-content: start;">
+							<div class=" fragment formation-content" style="padding: 0.3em 0.2em;display: flex;justify-content: start;flex-direction: column;margin-top: 1em;">
+								<ul>
+									<li class="fragment">
+										Permet à un hôte de s'auto-configurer une adresse IPv6 sans serveur DHCPv6
+									</li>
+									<li class="fragment">
+										\64 maximum pour le préfixe du lien
+									</li>
+								</ul>
+							</div>
+						</div>
+						<img class="fragment" src="img/SLAAC.png" style="width:90%">
+					</main>
+				</section>
+
+				<!-- Slide 21 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">En pratique comment faire de l'ipv6 ?</p>
@@ -561,7 +602,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 21 -->
+				<!-- Slide 22 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Quid des ipv4 ?</p>
@@ -599,7 +640,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 22 -->
+				<!-- Slide 23 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Double pile</p>
@@ -620,7 +661,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 23 -->
+				<!-- Slide 24 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Tunnel 6in4</p>
@@ -641,7 +682,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 24 -->
+				<!-- Slide 25 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">NAT64</p>
@@ -668,7 +709,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 25 -->
+				<!-- Slide 26 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">La dictature</p>
@@ -680,7 +721,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 26 -->
+				<!-- Slide 27 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Références</p>
@@ -710,7 +751,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 27 -->
+				<!-- Slide 28 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Annexe 1 : En-tête ipv6</p>
@@ -722,7 +763,7 @@
 					</main>
 				</section>
 
-				<!-- Slide 28 -->
+				<!-- Slide 29 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Annexe 2 : Paquet ipv6</p>
@@ -734,7 +775,7 @@
 					</main>
 				</section>
 				
-				<!-- Slide 29 -->
+				<!-- Slide 30 -->
 				<section data-background-image="img/intro.svg">
 					<header class="formation-header">
 						<p class="formation-header-title">Annexe 3 : Message ICMPv6</p>
