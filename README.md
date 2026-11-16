@@ -4,6 +4,8 @@ Framework utilisé : Revealjs
 
 Ceci est une présentation sur l'ipv6 réalisée pour l'association Rézoléo
 
+Pour voir la forma : https://aliasxox.github.io/forma_rezoleo_ipv6/
+
 ## To do
 
 - Montrer un ip a avec une interface comportant plusieurs ipv6
